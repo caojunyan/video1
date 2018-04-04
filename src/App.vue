@@ -29,4 +29,6 @@ export default {
   html
     font-size 10px
     margin 0
+    a
+      -webkit-tap-highlight-color:rgba(0,0,0,0)
 </style>

@@ -183,7 +183,9 @@ section,
 summary {
   display: block;
 }
-
+a {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
 @media screen and (min-width:100px){ /*  iPhone 4,5 */
   html{ font-size: 10px;}
 }

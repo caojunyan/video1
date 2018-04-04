@@ -157,6 +157,7 @@
 
 <style scoped lang="stylus">
   @import "../../common/stylus/variable.styl"
+
 .home
   width 100%
   overflow hidden
@@ -270,6 +271,8 @@
               span
                 color #fff
                 font-size .5rem
+                position relative
+                top -2px
             .time
               float right
               font-size .5rem
