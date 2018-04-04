@@ -1,0 +1,15 @@
+<template>
+    <div class="question">
+      问答
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "question"
+    }
+</script>
+
+<style scoped>
+
+</style>
