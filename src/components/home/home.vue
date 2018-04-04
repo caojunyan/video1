@@ -61,6 +61,59 @@
           </div>
         </router-link>
       </div>
+      <!--热门视频-->
+      <div class="video">
+        <div class="title">
+          <span></span>
+          <b>热门视频</b>
+        </div>
+        <div class="content">
+          <router-link :to="{path:'/'}">
+            <div class="item">
+              <img src="./banner2.png" alt="">
+              <div class="detail">
+              </div>
+              <div class="info">
+                <h6>业绩爆破</h6>
+                <p>解开千万秘密，业绩爆破的</p>
+              </div>
+            </div>
+          </router-link>
+          <router-link :to="{path:'/'}">
+            <div class="item">
+              <img src="./banner2.png" alt="">
+              <div class="detail">
+              </div>
+              <div class="info">
+                <h6>业绩爆破</h6>
+                <p>解开千万秘密，业绩爆破的</p>
+              </div>
+            </div>
+          </router-link>
+          <router-link :to="{path:'/'}">
+            <div class="item">
+              <img src="./banner2.png" alt="">
+              <div class="detail">
+              </div>
+              <div class="info">
+                <h6>业绩爆破</h6>
+                <p>解开千万秘密，业绩爆破的</p>
+              </div>
+            </div>
+          </router-link>
+          <router-link :to="{path:'/'}">
+            <div class="item">
+              <img src="./banner2.png" alt="">
+              <div class="detail">
+              </div>
+              <div class="info">
+                <h6>业绩爆破</h6>
+                <p>解开千万秘密，业绩爆破的</p>
+              </div>
+            </div>
+          </router-link>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -106,10 +159,10 @@
           height 100%
           background #fff
           text-align: center
-          padding-top 20px
           h3
             font-size .8rem
             color $color-theme
+            margin-top 20px
           span
             font-size .6rem
             color $color-theme
@@ -123,4 +176,41 @@
           img
             width 100%
             height 100px
+  .video
+    width 100%
+    min-height 172px
+    .title
+      height 40px
+      width 100%
+      line-height 40px
+      padding-left 5px
+      span
+        width 5px
+        height 5px
+        display inline-block
+        border-radius 50%
+        background $color-theme
+        vertical-align middle
+      b
+        font-weight normal
+        font-size .8rem
+
+    .content
+      width 100%
+      min-height 100px
+      display flex
+      flex-wrap wrap
+      justify-content space-around
+      a
+        width 48%
+        height 100px
+        display inline-block
+        margin-top 5px
+        text-decoration none
+        color $color-theme
+        .item
+          width 100%
+          .img
+            width 100%
+
 </style>
