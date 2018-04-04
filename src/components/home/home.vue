@@ -30,7 +30,7 @@
         <router-link :to="{path:'/'}">
           <div class="item">
             <div class="info">
-              <h3>公司简介</h3>
+              <h3>团队介绍</h3>
               <span>点击了解</span>
             </div>
             <div class="pic">
@@ -41,7 +41,7 @@
         <router-link :to="{path:'/'}">
           <div class="item">
             <div class="info">
-              <h3>公司简介</h3>
+              <h3>课程安排</h3>
               <span>点击了解</span>
             </div>
             <div class="pic">
@@ -52,7 +52,7 @@
         <router-link :to="{path:'/'}">
           <div class="item">
             <div class="info">
-              <h3>公司简介</h3>
+              <h3>了解我们</h3>
               <span>点击了解</span>
             </div>
             <div class="pic">
@@ -72,10 +72,18 @@
             <div class="item">
               <img src="./banner2.png" alt="">
               <div class="detail">
+                <span class="start">
+                  <img src="./start.png" alt="">
+                </span>
+                <span class="liuyan">
+                  <img src="./liuyan.png" alt="">
+                  <span>1704</span>
+                </span>
+                <span class="time">1:36:00</span>
               </div>
               <div class="info">
                 <h6>业绩爆破</h6>
-                <p>解开千万秘密，业绩爆破的</p>
+                <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
               </div>
             </div>
           </router-link>
@@ -83,10 +91,18 @@
             <div class="item">
               <img src="./banner2.png" alt="">
               <div class="detail">
+                <span class="start">
+                  <img src="./start.png" alt="">
+                </span>
+                <span class="liuyan">
+                  <img src="./liuyan.png" alt="">
+                  <span>1704</span>
+                </span>
+                <span class="time">1:36:00</span>
               </div>
               <div class="info">
                 <h6>业绩爆破</h6>
-                <p>解开千万秘密，业绩爆破的</p>
+                <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
               </div>
             </div>
           </router-link>
@@ -94,10 +110,18 @@
             <div class="item">
               <img src="./banner2.png" alt="">
               <div class="detail">
+                <span class="start">
+                  <img src="./start.png" alt="">
+                </span>
+                <span class="liuyan">
+                  <img src="./liuyan.png" alt="">
+                  <span>1704</span>
+                </span>
+                <span class="time">1:36:00</span>
               </div>
               <div class="info">
                 <h6>业绩爆破</h6>
-                <p>解开千万秘密，业绩爆破的</p>
+                <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
               </div>
             </div>
           </router-link>
@@ -105,10 +129,18 @@
             <div class="item">
               <img src="./banner2.png" alt="">
               <div class="detail">
+                <span class="start">
+                  <img src="./start.png" alt="">
+                </span>
+                <span class="liuyan">
+                  <img src="./liuyan.png" alt="">
+                  <span>1704</span>
+                </span>
+                <span class="time">1:36:00</span>
               </div>
               <div class="info">
                 <h6>业绩爆破</h6>
-                <p>解开千万秘密，业绩爆破的</p>
+                <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
               </div>
             </div>
           </router-link>
@@ -129,13 +161,14 @@
   width 100%
   overflow hidden
   height 100%
+  margin-bottom 50px
   background #F8F8F8
   .swiper-wrapper
     width 100%
-    height 250px
+    height 190px
     img
       width 100%
-      height 250px
+      height 190px
   .introduction
     width 100%
     margin-top 5px
@@ -145,14 +178,14 @@
     min-height 100px
     a
       width 48%
-      height 100px
+      height 72px
       display inline-block
       margin-top 5px
       text-decoration none
       color $color-theme
       .item
         width 100%
-        height 100px
+        height 72px
         display flex
         .info
           width 40%
@@ -162,20 +195,20 @@
           h3
             font-size .8rem
             color $color-theme
-            margin-top 20px
+            margin-top 10px
           span
             font-size .6rem
             color $color-theme
             display inline-block
             border 1px solid #F8B551
             border-radius 10px
-            padding 2px 6px
-            margin-top 10px
+            padding 2px 4px
+            margin-top 8px
         .pic
           width 60%
           img
             width 100%
-            height 100px
+            height 72px
   .video
     width 100%
     min-height 172px
@@ -203,14 +236,62 @@
       justify-content space-around
       a
         width 48%
-        height 100px
+        height 154px
         display inline-block
         margin-top 5px
         text-decoration none
         color $color-theme
         .item
           width 100%
-          .img
+          height 154px
+          position relative
+          img
             width 100%
+            height 100px
+          .detail
+            width 100%
+            height 20px
+            line-height 20px
+            position absolute
+            bottom 54px
+            left 0
+            z-index 100
+            vertical-align middle
+            .start
+              padding-left 10px
+              img
+                width .7rem
+                height .6rem
+            .liuyan
+              padding-left 10px
+              img
+                width .7rem
+                height .6rem
+              span
+                color #fff
+                font-size .5rem
+            .time
+              float right
+              font-size .5rem
+              color #fff
+          .info
+            h6
+              font-size .8rem
+              color #000
+              line-height 25px
+              width 100%
+              overflow hidden
+              text-overflow ellipsis
+              height 20px
+              white-space: nowrap
+            p
+              font-size .8rem
+              color $color-text
+              line-height 25px
+              width 100%
+              overflow hidden
+              text-overflow ellipsis
+              height 20px
+              white-space: nowrap
 
 </style>

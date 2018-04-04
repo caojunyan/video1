@@ -3,7 +3,7 @@
       <router-link to="/home" class="item">
         <dl>
           <dt>
-            <img src="./logo.png" alt="">
+            <img src="./img/yinping.png" alt="">
           </dt>
           <dd>音频</dd>
         </dl>
@@ -11,7 +11,7 @@
       <router-link to="/video" class="item">
         <dl>
           <dt>
-            <img src="./logo.png" alt="">
+            <img src="./img/video.png" alt="">
           </dt>
           <dd>视频</dd>
         </dl>
@@ -19,7 +19,7 @@
       <router-link to="/book" class="item">
         <dl>
           <dt>
-            <img src="./logo.png" alt="">
+            <img src="./img/book.png" alt="">
           </dt>
           <dd>书刊</dd>
         </dl>
@@ -27,7 +27,7 @@
       <router-link to="/question" class="item">
         <dl>
           <dt>
-            <img src="./logo.png" alt="">
+            <img src="./img/question.png" alt="">
           </dt>
           <dd>问答</dd>
         </dl>
@@ -35,7 +35,7 @@
       <router-link to="/my" class="item">
         <dl>
           <dt>
-            <img src="./logo.png" alt="">
+            <img src="./img/my.png" alt="">
           </dt>
           <dd>我的</dd>
         </dl>
@@ -74,7 +74,7 @@ html,body
         width 100%
         margin 0
         img
-          width 20px
+          width 22px
         dd
           width 100%
           margin 0
