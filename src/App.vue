@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <my-head></my-head>
+    <myHead v-if="showFlag" v-show="headerShow"></myHead>
     <router-view></router-view>
-    <my-foot></my-foot>
+    <myFoot v-if="showFlag"></myFoot>
   </div>
 </template>
 
@@ -13,12 +13,46 @@ export default {
   name: 'App',
   data(){
     return{
-
+      showFlag:true,
+      headerShow:true
     }
   },
   components:{
     myHead,
     myFoot
+  },
+  methods:{
+//    判断头部和脚步是否显示
+    toShow(){
+      let status=this.$route.path;
+      if(status==="/audio"){
+        this.showFlag=true
+        this.headerShow=true
+      }else if(status==="/video"){
+        this.showFlag=true
+        this.headerShow=true
+      }else if(status==="/book"){
+        this.showFlag=true
+        this.headerShow=true
+      }else if(status==="/question"){
+        this.showFlag=true
+        this.headerShow=true
+      }else if(status==="/my"){
+        this.showFlag=true
+        this.headerShow=false
+      }else{
+        this.showFlag=false
+        this.headerShow=false
+      }
+    }
+  },
+  mounted(){
+    this.toShow()
+  },
+  watch:{
+    $route(to, from) {
+      this.toShow()
+    }
   }
 
 }

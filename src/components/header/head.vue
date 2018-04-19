@@ -16,8 +16,10 @@
           }
         },
         mounted(){
+          this.title=this.$route.meta.title
         },
         methods:{
+
         },
         watch:{
           $route(to, from) {

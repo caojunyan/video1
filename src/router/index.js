@@ -1,22 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/home/home'
-import Video from '../components/video/video'
-import Book from '../components/book/book'
-import Question from '../components/question/question'
-import My from '../components/my/my'
+import Video from '../components/video/video.vue'
+import  Audio from '../components/audio/audio.vue'
+import Book from '../components/book/book.vue'
+import Question from '../components/question/question.vue'
+import My from '../components/my/my.vue'
+
+import Detail from '../components/videoDetail/videoDetail.vue'
+import VIP from '../components/VIP/VIP.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      redirect:'/home'
+      redirect:'/audio'
     },
     {
-      path: '/home',
-      name: 'home',
-      component:Home,
+      path: '/audio',
+      name: 'audio',
+      component:Audio,
       meta:{
         title:'音频'
       }
@@ -51,6 +54,19 @@ export default new Router({
       component:My,
       meta:{
         title:'我的'
+      }
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component:Detail,
+    },
+    {
+      path: '/vip',
+      name: 'VIP',
+      component:VIP,
+      meta:{
+        title:"VIP会员"
       }
     }
   ]
