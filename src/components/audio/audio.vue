@@ -1,5 +1,11 @@
 <template>
 <div class="video">
+  <div class="head">
+    <span>音频</span>
+    <div class="logo" @click="shaixuan">
+      <img src="./shaixuan@2x.png" alt="">
+    </div>
+  </div>
   <div class="banner">
     <img src="./banner@3x.png" alt="">
   </div>
@@ -83,7 +89,7 @@
     </div>
   </div>
   <!--弹框-->
-  <div class="box">
+  <div class="box" v-show="show">
     <ul>
       <li>
         <b>促</b>
@@ -115,7 +121,21 @@
 </template>
 
 <script>
+  import myHeader from '../header/head.vue'
     export default {
+      data(){
+        return{
+          show:false
+        }
+      },
+      components:{
+        myHeader
+      },
+      methods:{
+        shaixuan(){
+          this.show=!this.show
+        }
+      }
     }
 </script>
 
@@ -124,6 +144,21 @@
 .video
   width 100%
   margin-bottom 50px
+  .head
+    height 40px
+    line-height 40px
+    font-size 1.3rem
+    padding-right 20px
+    padding-left 20px
+    text-align: center
+    .logo
+      float right
+      img
+        width 20px
+        position: relative;
+        top: -7px;
+
+
   .banner
     width 100%
     height 175px

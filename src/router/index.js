@@ -8,6 +8,7 @@ import My from '../components/my/my.vue'
 
 import Detail from '../components/videoDetail/videoDetail.vue'
 import VIP from '../components/VIP/VIP.vue'
+import Watch from '../components/watch/watch.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +68,14 @@ export default new Router({
       component:VIP,
       meta:{
         title:"VIP会员"
+      }
+    },
+    {
+      path: '/watch',
+      name: 'Watch',
+      component:Watch,
+      meta:{
+        title:"观看劵"
       }
     }
   ]

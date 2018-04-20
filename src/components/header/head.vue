@@ -2,7 +2,7 @@
   <div class="head">
     <span>{{title}}</span>
     <div class="logo">
-      <img src="./logo.png" alt="">
+      <img src="./shaixuan@2x.png" alt="">
     </div>
   </div>
 </template>
@@ -42,6 +42,8 @@
       float right
       img
         width 20px
+        position: relative;
+        top: -7px;
 
 
 </style>

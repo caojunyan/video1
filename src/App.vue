@@ -27,7 +27,7 @@ export default {
       let status=this.$route.path;
       if(status==="/audio"){
         this.showFlag=true
-        this.headerShow=true
+        this.headerShow=false
       }else if(status==="/video"){
         this.showFlag=true
         this.headerShow=true
@@ -65,4 +65,6 @@ export default {
     margin 0
     a
       -webkit-tap-highlight-color:rgba(0,0,0,0)
+
+
 </style>
