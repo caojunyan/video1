@@ -38,6 +38,9 @@
     padding-right 20px
     padding-left 20px
     text-align: center
+    position fixed
+    z-index 1000
+    background #fff
     .logo
       float right
       img

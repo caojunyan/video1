@@ -66,5 +66,4 @@ export default {
     a
       -webkit-tap-highlight-color:rgba(0,0,0,0)
 
-
 </style>
