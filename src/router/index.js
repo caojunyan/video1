@@ -9,6 +9,10 @@ import My from '../components/my/my.vue'
 import Detail from '../components/videoDetail/videoDetail.vue'
 import VIP from '../components/VIP/VIP.vue'
 import Watch from '../components/watch/watch.vue'
+import Login from '../components/login/login.vue'
+import Register from '../components/register/register.vue'
+import AudioList from '../components/audioList/audioList.vue'
+import AudioClass from '../components/classaudioList/classaudioList.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -77,6 +81,38 @@ export default new Router({
       meta:{
         title:"观看劵"
       }
-    }
+    },
+    {
+      path:'/login',
+      name:Login,
+      component:Login,
+      meta:{
+        title:"登录"
+      }
+    },
+    {
+      path:'/register',
+      name:Register,
+      component:Register,
+      meta:{
+        title:"注册"
+      }
+    },
+    {
+      path:'/audioList',
+      name:AudioList,
+      component:AudioList,
+      meta:{
+        title:"音频列表"
+      }
+    },
+    {
+      path:'/audioClass',
+      name:AudioClass,
+      component:AudioClass,
+      meta:{
+        title:"音频列表"
+      }
+    },
   ]
 })

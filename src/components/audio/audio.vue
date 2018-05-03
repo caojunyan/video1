@@ -9,156 +9,25 @@
   <scroll  class="scroll" >
     <div>
       <div class="banner">
-        <img src="./banner@3x.png" alt="">
+        <mt-swipe :auto="4000">
+          <mt-swipe-item v-for="(item,index) in carouselFigureList" :key="index">
+            <img :src=item.image alt="">
+          </mt-swipe-item>
+        </mt-swipe>
       </div>
       <!--课程-->
       <div class="course-wrapper">
         <h3 class="title">精品课程</h3>
-        <div class="course">
+        <div class="course" v-for="(item,index) in hotList" :key="index" @click="toClass(item.big)">
           <div class="img">
-            <img src="./course-img.png" alt="">
+            <img :src=item.image alt="">
           </div>
           <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
+            <p class="title">{{item.title}}</p>
+            <p class="text">{{item.label}}</p>
             <p class="detail">
               <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
-              <i class="total-img"></i>
-              <span class="total">6集</span>
-            </p>
-          </div>
-        </div>
-        <div class="course">
-          <div class="img">
-            <img src="./course-img.png" alt="">
-          </div>
-          <div class="course-info">
-            <p class="title">业绩突业绩突破的业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密业绩突业绩突破的秘密业绩突破的秘密业绩突破的秘密破的秘密秘密业绩突破的秘密业绩突破的秘密破的秘密</p>
-            <p class="text">周亮：卖货很简单，你想你想知道其中的秘密吗你想知道其中的秘密吗你想知道其中的秘密吗知道其中的秘密吗</p>
-            <p class="detail">
-              <i class="count-img"></i>
-              <span class="count">1880次</span>
+              <span class="count">{{item.num}}次</span>
               <i class="total-img"></i>
               <span class="total">6集</span>
             </p>
@@ -168,29 +37,29 @@
       <!--弹框-->
       <div class="box" v-show="show">
         <ul>
-          <li>
+          <li @click="toHomeList('店长专区')">
             <b>促</b>
-            <span>促销课程</span>
+            <span>店长专区</span>
           </li>
-          <li>
+          <li @click="toHomeList('管理运营篇')">
             <b>营</b>
-            <span>经营方法</span>
+            <span>管理运营篇</span>
           </li>
-          <li>
+          <li @click="toHomeList('销售技巧篇')">
+            <b>促</b>
+            <span>销售技巧篇</span>
+          </li>
+          <li @click="toHomeList('陈列篇')">
             <b>落</b>
-            <span>落地教学</span>
+            <span>陈列篇</span>
           </li>
-          <li>
-            <b>V</b>
-            <span>VIP特权</span>
+          <li @click="toHomeList('VIP管理篇')">
+            <b>促</b>
+            <span>VIP管理篇</span>
           </li>
-          <li>
-            <b>其</b>
-            <span>其他</span>
-          </li>
-          <li style="border: none">
-            <b>其</b>
-            <span>其他</span>
+          <li style="border: none" @click="toHomeList('促销篇')">
+            <b>落</b>
+            <span>促销篇</span>
           </li>
         </ul>
       </div>
@@ -202,10 +71,14 @@
 <script>
   import myHeader from '../header/head.vue'
   import Scroll from '../scroll/scroll'
+  import { Indicator, Swipe, SwipeItem } from 'mint-ui';
+  import {getAudioList} from '../../api/api'
     export default {
       data(){
         return{
           show:false,
+          hotList:[],
+          carouselFigureList:[]
         }
       },
       components:{
@@ -215,7 +88,32 @@
       methods:{
         shaixuan(){
           this.show=!this.show
+        },
+        //获取音频列表和轮播图列表
+        getAudioHome(){
+          Indicator.open({
+            text: '加载中...',
+            spinnerType: 'fading-circle'
+          });
+          getAudioList(this).then(res=>{
+            this.hotList=res.data.hotList
+            this.carouselFigureList=res.data.carouselFigureList
+            Indicator.close();
+          }).catch(err=>{
+            console.log(err)
+          })
+        },
+        //去大类
+        toClass(index){
+          this.$router.push({path: '/audioList', query: {index: index}});
+        },
+        toHomeList(info){
+          this.$router.push({path: '/audioClass', query: {type: info}});
         }
+
+      },
+      mounted(){
+       this.getAudioHome()
       }
     }
 </script>
@@ -296,6 +194,8 @@
               height 20px
               line-height 20px
               padding-top 0
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
             .text
               font-size 12px
               color: #666
@@ -305,6 +205,8 @@
               line-height 20px
               overflow hidden
               width 100%
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
             .detail
               font-size 12px
               color #999
@@ -341,7 +243,7 @@
         background #F8F8F8
         box-shadow 3px 3px 10px #DEDEDE;
         position absolute
-        top 40px
+        top 0px
         right 7px
         padding-right 19px
         padding-left 19px

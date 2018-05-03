@@ -69,7 +69,7 @@
             <span></span>
             <b>热门视频</b>
           </div>
-          <div class="content">
+          <div class="content" ref="video">
             <router-link :to="{path:'/detail'}">
               <div class="item">
                 <img src="./banner2.png" alt="">
@@ -220,6 +220,14 @@
 
     components: {
       Scroll,
+    },
+    methods:{
+      init(){
+
+      }
+    },
+    mounted(){
+      this.init()
     }
   }
 </script>
