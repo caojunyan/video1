@@ -1,234 +1,244 @@
 <template>
   <div class="home">
+  
     <scroll class="scroll">
+  
       <div>
+  
         <!--轮播-->
+  
         <div class="swiper-wrapper">
+  
           <mt-swipe :auto="4000">
-            <mt-swipe-item>
-              <img src="./banner2.png" alt="">
+  
+            <mt-swipe-item v-for="(item,index) in bannerImage" :key=index>
+  
+              <img :src=item.image alt="">
+  
             </mt-swipe-item>
-            <mt-swipe-item>
-              <img src="./01.jpg" alt="">
-            </mt-swipe-item>
-            <mt-swipe-item>
-              <img src="./02.jpg" alt="">
-            </mt-swipe-item>
+  
           </mt-swipe>
+  
         </div>
+  
         <!--介绍-->
+  
         <div class="introduction">
-          <router-link :to="{path:'/'}">
+  
+          <div @click="toImage(image[0])">
+  
             <div class="item">
+  
               <div class="info">
+  
                 <h3>公司简介</h3>
+  
                 <span>点击了解</span>
+  
               </div>
+  
               <div class="pic">
+  
                 <img src="./intro1.png" alt="">
+  
               </div>
+  
             </div>
-          </router-link>
-          <router-link :to="{path:'/'}">
+  
+          </div>
+  
+          <div @click="toImage(image[1])">
+  
             <div class="item">
+  
               <div class="info">
+  
                 <h3>团队介绍</h3>
+  
                 <span>点击了解</span>
+  
               </div>
+  
               <div class="pic">
+  
                 <img src="./intro2.png" alt="">
+  
               </div>
+  
             </div>
-          </router-link>
-          <router-link :to="{path:'/'}">
+  
+          </div>
+  
+          <div @click="toImage(image[2])">
+  
             <div class="item">
+  
               <div class="info">
+  
                 <h3>课程安排</h3>
+  
                 <span>点击了解</span>
+  
               </div>
+  
               <div class="pic">
+  
                 <img src="./intro3.png" alt="">
+  
               </div>
+  
             </div>
-          </router-link>
-          <router-link :to="{path:'/'}">
+  
+          </div>
+  
+          <div @click="toImage(image[3])">
+  
             <div class="item">
+  
               <div class="info">
+  
                 <h3>了解我们</h3>
+  
                 <span>点击了解</span>
+  
               </div>
+  
               <div class="pic">
+  
                 <img src="./intro4.png" alt="">
+  
               </div>
+  
             </div>
-          </router-link>
+  
+          </div>
+  
         </div>
+  
         <!--热门视频-->
+  
         <div class="video">
+  
           <div class="title">
+  
             <span></span>
+  
             <b>热门视频</b>
+  
           </div>
+  
           <div class="content" ref="video">
-            <router-link :to="{path:'/detail'}">
+  
+            <router-link :to="{path:'/detail'}" v-for="(item,index) in videoList" :key=index>
+  
               <div class="item">
-                <img src="./banner2.png" alt="">
+  
+                <img :src=item.image alt="">
+  
                 <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
+  
+                  <span class="start">
+  
+                    <img src="./start.png" alt="">
+  
+                  </span>
+  
                   <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
+  
+                    <img src="./liuyan.png" alt="">
+  
+                    <span>1704</span>
+  
+                  </span>
+  
+                  <span class="time">{{item.TIME}}</span>
+  
                 </div>
+  
                 <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
+  
+                  <h6>{{item.title}}</h6>
+  
+                  <p>{{item.introduce}}</p>
+  
                 </div>
+  
               </div>
+  
             </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
-            <router-link :to="{path:'/detail'}">
-              <div class="item">
-                <img src="./banner2.png" alt="">
-                <div class="detail">
-                <span class="start">
-                  <img src="./start.png" alt="">
-                </span>
-                  <span class="liuyan">
-                  <img src="./liuyan.png" alt="">
-                  <span>1704</span>
-                </span>
-                  <span class="time">1:36:00</span>
-                </div>
-                <div class="info">
-                  <h6>业绩爆破</h6>
-                  <p>解开千万秘密，业绩业绩爆破的业绩爆破的业绩爆破的业绩爆破的爆破的</p>
-                </div>
-              </div>
-            </router-link>
+  
           </div>
+  
         </div>
+  
       </div>
+  
     </scroll>
+  
   </div>
 </template>
 <script>
-
   import Scroll from '../scroll/scroll'
+  
+  import {
+  
+    getVideoList
+  
+  } from '../../api/api';
+  
   export default {
-    data () {
+  
+    data() {
+  
       return {
+  
+        bannerImage: [],
+  
+        videoList: [],
+        image:[]
+  
       }
+  
     },
-
+  
+  
+  
     components: {
+  
       Scroll,
+  
     },
-    methods:{
-      init(){
-
+  
+    methods: {
+  
+      getVideo() {
+  
+        getVideoList(this).then(res => {
+  
+          this.bannerImage = res.data.carouselFigureList;
+  
+          this.videoList = res.data.hotList;
+          for(var i=0;i<res.data.companyList.length;i++){
+            this.image.push(res.data.companyList[i].url)
+          }
+          
+        })
+  
+      },
+      toImage(url){
+        this.$router.push({
+          path:url
+        })
       }
+  
     },
-    mounted(){
-      this.init()
+  
+    mounted() {
+  
+      this.getVideo()
+  
     }
+  
   }
 </script>
 <style lang="stylus" scoped>
@@ -254,7 +264,7 @@
       justify-content space-around
       flex-wrap wrap
       min-height  178px
-      a
+      div
         width 48%
         height 72px
         display inline-block

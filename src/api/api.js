@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 import axios from './httpConfig';
 import qs from 'qs';
 
@@ -17,6 +18,13 @@ export const getBigHome=(_this,id)=>{
 //音频分类
 export const getHomeClass=(_this,info)=>{
   return axios.get('findAudioByLabel?label='+info).then(function(res){
+    return res;
+  })
+}
+
+//视频页面
+export const getVideoList=(_this)=>{
+  return axios.get('indexDetail').then(function(res){
     return res;
   })
 }
