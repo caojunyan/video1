@@ -1,21 +1,19 @@
 <template>
 <div class="login">
   <div class="head">
-    <i class="logo">
-    </i>
+    <b @click="toRegister">注册</b>
     <span>登录</span>
-    <b>注册</b>
   </div>
   <div class="login-container">
     <div class="tel">
-      <input type="tel" placeholder="输入手机号码">
+      <input type="tel" placeholder="输入手机号码" v-model="loginForm.phone">
     </div>
     <div class="yanzheng">
-      <input type="tel" placeholder="输入手机验证码">
-      <span>获取验证码</span>
+      <input type="tel" placeholder="输入手机验证码" v-model="loginForm.verificationCode">
+      <span @click="getCode">获取验证码</span>
     </div>
     <div class="button">
-      <span>登录</span>
+      <span @click="toLogin">登录</span>
     </div>
   </div>
 </div>
@@ -23,8 +21,42 @@
 </template>
 
 <script>
+  import {codeLogin,Login} from '../../api/api'
+  import { Toast } from 'mint-ui';
 export default {
+data(){
+    return{
+      loginForm:{
+        phone:"",
+        verificationCode:""
+      }
+    }
+  },
+  methods:{
+    toRegister(){
+      this.$router.push({
+        path:'/register'
+      })
+    },
+    getCode(){
+      codeLogin(this,this.loginForm.phone).then(res=>{
+        console.log(res)
+      Toast(res.data.msg)
+      })
+    },
+  toLogin(){
+    console.log(this.loginForm)
+    this.$router.push({
+      path:'/audio'
+    })
+    Login(this,this.loginForm).then(res=>{
+      console.log(res)
 
+    }).catch(err=>{
+    console.log(err)
+  })
+  }
+  }
 
 }
 </script>
@@ -42,22 +74,15 @@ export default {
     position fixed
     background #FF885D
     z-index 100
-    .logo
+    padding-left 20px
+    b
       display: inline-block
-      width: 12px
-      height: 20px
-      bg-image("back")
-      background-size: 100% 100%;
-      position: relative;
-      float: left;
-      left: 15px;
-      top: 9px;
+      position: relative
+      color #fff
+      font-weight normal
     span
       color #fff
-    b
-      color #FF895D
-      position absolute
-      z-index 100
+      position relative
 
   .login-container
     top 140px

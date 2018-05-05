@@ -78,7 +78,8 @@
         return{
           show:false,
           hotList:[],
-          carouselFigureList:[]
+          carouselFigureList:[],
+          phone:"18627009459"
         }
       },
       components:{

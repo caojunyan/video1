@@ -23,12 +23,12 @@
   </div>
   <div class="list">
     <ul>
-      <li class="li1">
+      <li class="li1" @click="buyvip">
         <b></b>
         <span>购买vip</span>
         <i></i>
       </li>
-      <li class="li2">
+      <li class="li2" @click="buywatch">
         <b></b>
         <span>购买观看劵</span>
         <i></i>
@@ -54,8 +54,32 @@
 </template>
 
 <script>
+  import {my} from '../../api/api'
+  import { Toast } from 'mint-ui';
     export default {
-        name: "my"
+        name: "my",
+      data(){
+    return{
+      userid:'user_4e5fd3fd0aec48fcb1038895925'
+    }
+  },
+      methods:{
+        getInfo(){
+    my(this,this.userid).then(res=>{
+      console.log(res)
+          Toast(res.data.msg)
+    })
+  },
+  buyvip(){
+    this.$router.push({path:"/vip"})
+  },
+  buywatch(){
+    this.$router.push({path:"/watch"})
+  }
+      },
+  mounted(){
+    this.getInfo()
+  }
     }
 </script>
 

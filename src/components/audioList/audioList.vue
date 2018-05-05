@@ -1,10 +1,11 @@
 <template>
   <div class="list">
     <div class="head">
-      <i class="logo">
+      <i class="logo" @click="goBack">
       </i>
       <span>视频列表</span>
-      <b>收藏</b>
+      <b @click="collect"  v-if="collShow">收藏</b>
+      <b @click="cancelcollect" v-if="!collShow">取消收藏</b>
     </div>
     <scroll class="scroll">
       <div>
@@ -33,12 +34,15 @@
 
 <script >
   import Scroll from '../scroll/scroll'
-  import {getBigHome} from  '../../api/api'
-  import { Indicator } from 'mint-ui';
+  import {getBigHome,getCollect,delCollect} from  '../../api/api'
+  import { Indicator ,Toast} from 'mint-ui';
   export default {
     data(){
       return{
-        audioList:[]
+        audioList:[],
+        userId:'user_4e5fd3fd0aec48fcb1038895925a1701',
+        collShow:true,
+        status:status
       }
     },
     components: {
@@ -59,9 +63,39 @@
           console.log(err)
         })
       },
+    collect(){
+    this.collShow=false
+    var big=this.$route.query.index
+    console.log(this.$route.query)
+    getCollect(this,this.userId,big).then(res=>{
+      Toast(res.data.msg)
+      console.log(res)
+    this.status=res.data.status
+    })
+  },
+  cancelcollect(){
+    this.collShow=true
+    var big=this.$route.query.index
+    console.log(this.$route.query)
+    delCollect(this,this.userId,big).then(res=>{
+      Toast(res.data.msg)
+      console.log(res)
+    this.status=res.data.status
+
+  })
+
+  },
+  goBack(){
+    this.$router.go(-1)
+  }
     },
     mounted(){
       this.getHomeList()
+    if(this.status===0){
+      this.collShow=true
+    }else if(this.status==1){
+      this.collShow=false
+    }
     }
   }
 </script>

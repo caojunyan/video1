@@ -4,7 +4,7 @@
     <div>
       <!--视频播放-->
       <div class="start" >
-        <video poster="" src="./bofang.mp4" style="width: 100%;height: 228px" controls ref="video"></video>
+        <video :poster=detail.image :src=detail.content style="width: 100%;height: 228px" controls ref="video"></video>
       </div>
       <!--课程大纲-->
       <div class="outline">
@@ -19,11 +19,11 @@
           <div class="teacher-info">
             <p>
               <b>主讲师：</b>
-              <span>周亮</span>
+              <span>{{detail.lecturer}}</span>
             </p>
             <p>
               <b>地&nbsp;&nbsp;&nbsp;&nbsp;点：</b>
-              <span>郑州二七绿地</span>
+              <span style="display:inline-block;width:200px;overflow:hidden">{{detail.address}}</span>
             </p>
             <p>
               <b>参赛人员：</b>
@@ -31,7 +31,7 @@
             </p>
             <p>
               <b style="vertical-align: top">内&nbsp;&nbsp;&nbsp;&nbsp;容：</b>
-              <span style="width: 70%;text-align: left;overflow: hidden;height: 37px">此份清此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及此份清单涉及</span>
+              <span style="width: 70%;text-align: left;overflow: hidden;height: 37px">{{detail.introduce}}</span>
             </p>
           </div>
         </div>
@@ -96,20 +96,40 @@
 
 <script>
   import Scroll from '../scroll/scroll'
+  import {
+    videoDetail
+
+    } from '../../api/api';
  export default {
   data(){
     return{
-
+      userid:"user_4e5fd3fd0aec48fcb1038895925a1701",
+      index:"",
+      detail:""
     }
   },
    components:{
      Scroll
    },
    methods:{
-     toQuestion(){
+     toQuestion()
+     {
        this.$router.push({path: '/question'});
+     },
+     toDetail()
+     {
+       videoDetail(this, this.index, this.userid).then(res => {
+         this.detail=res.data.result[0]
+       console.log(this.detail)
      }
+   )
    }
+  },
+  mounted(){
+    this.index=this.$route.query.index
+    console.log(this.index)
+    this.toDetail()
+  }
 }
 </script>
 

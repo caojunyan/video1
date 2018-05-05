@@ -1,7 +1,7 @@
 <template>
  <div class="list">
    <div class="head">
-     <i class="logo">
+     <i class="logo" @click="goBack">
      </i>
      <span>{{label}}</span>
    </div>
@@ -63,7 +63,10 @@
           }).catch(err=>{
             console.log(err)
           })
-        }
+        },
+  goBack(){
+    this.$router.go(-1)
+  }
       },
       mounted(){
         this.getClass()

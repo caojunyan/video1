@@ -3,23 +3,40 @@
         <div>
           <div class="user-wrapper">
             <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
-            <input type="text" placeholder="请输入您的姓名">
+            <input type="text" placeholder="请输入您的姓名" v-model="name">
           </div>
           <div class="tel-wrapper">
             <label for="">联系方式：</label>
-            <input type="text" placeholder="请输入您的联系方式">
+            <input type="text" placeholder="请输入您的联系方式" v-model="phone">
           </div>
-          <textarea name="" id="" cols="30" rows="10" placeholder="  说出你的问题吧。。。">
+          <textarea v-model="questioncontent" name="" id="" cols="30" rows="10" placeholder="  说出你的问题吧。。。">
 
           </textarea>
         </div>
-      <span class="send">发送</span>
+      <span class="send" @click="submit">发送</span>
     </div>
 </template>
 
 <script>
+  import {question} from '../../api/api'
+  import { Toast } from 'mint-ui';
     export default {
-        name: "question"
+     name: "question",
+     data(){
+      return{
+        name:"",
+        phone:"",
+        questioncontent:""
+      }
+    },
+  methods:{
+    submit(){
+      question(this,this.questioncontent,this.name,this.phone).then(res=>{
+        console.log(res)
+      Toast(res.data.msg)
+      })
+    }
+  }
     }
 </script>
 
@@ -28,6 +45,8 @@
   border-top 1px solid #E8E8E8
   width 100%
   margin-bottom 50px
+  position relative
+  top 50px
   div
     background #F8F8F8
     .user-wrapper

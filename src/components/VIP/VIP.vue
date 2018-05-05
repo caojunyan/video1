@@ -91,7 +91,7 @@
               </li>
             </ul>
           </div>
-          <div class="pay">
+          <div class="pay" @click="buy">
             <span>￥1789立即开通</span>
           </div>
         </mt-tab-container-item>
@@ -220,11 +220,11 @@ export default {
       selected: '1'
     }
   },
-  selected: function (val, oldVal) {
-    //val     切换后 id
-    //oldVal  切换前 id
-    console.log(val,oldVal)
+methods:{
+  buy(){
+    console.log(5)
   }
+}
 }
 </script>
 
